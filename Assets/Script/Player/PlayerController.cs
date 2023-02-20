@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
     public float moveSpeed = 5f;
     private Vector2 moveInput;
     public Rigidbody2D theRB;
@@ -13,6 +14,10 @@ public class PlayerController : MonoBehaviour
     public GameObject bulletToFire;
     public float timeBetweenshots=1;
     public float shotCounter;
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         
